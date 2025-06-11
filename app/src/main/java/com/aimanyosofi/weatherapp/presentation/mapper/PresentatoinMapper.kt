@@ -20,12 +20,12 @@ fun Weather.toUiState(locationLabel: String): WeatherUiState {
             WeatherDetail(
                 R.drawable.fast_wind,
                 "Wind",
-                "${currentWeather.windSpeed10M} ${currentUnits.windSpeed10M}"
+                "${currentWeather.windSpeed} ${currentUnits.windSpeedUnit}"
             ),
             WeatherDetail(
                 R.drawable.humidity,
                 "Humidity",
-                "${currentWeather.relativeHumidity2M}%"
+                "${currentWeather.relativeHumidity}%"
             ),
             WeatherDetail(R.drawable.rain, "Rain", "${currentWeather.rain}%"),
             WeatherDetail(
@@ -36,12 +36,12 @@ fun Weather.toUiState(locationLabel: String): WeatherUiState {
             WeatherDetail(
                 R.drawable.arrow_down_05,
                 "Pressure",
-                "${currentWeather.surfacePressure} ${currentUnits.surfacePressure}"
+                "${currentWeather.surfacePressure} ${currentUnits.surfacePressureUnit}"
             ),
             WeatherDetail(
                 R.drawable.temperature,
                 "Feels like",
-                "${currentWeather.apparentTemperature} ${currentUnits.apparentTemperature}"
+                "${currentWeather.apparentTemperature} ${currentUnits.apparentTemperatureUnit}"
             ),
         ),
         currentForecast = CurrentForecast(
@@ -51,7 +51,7 @@ fun Weather.toUiState(locationLabel: String): WeatherUiState {
             DayForecast(
                 isDay = isDay,
                 weatherCode = hourly.weatherCode[index],
-                temperature = hourly.temperature2M[index],
+                temperature = hourly.temperature[index],
                 formattedHour = hourly.time[index].formatTo12Hour("yyyy-MM-dd'T'HH:mm")
             )
         },

@@ -15,13 +15,13 @@ data class CurrentWeatherDto(
     val rain: Double,
 
     @SerialName("relative_humidity_2m")
-    val relativeHumidity2M: Double,
+    val relativeHumidity: Double,
 
     @SerialName("surface_pressure")
     val surfacePressure: Double,
 
     @SerialName("temperature_2m")
-    val temperature2M: Double,
+    val temperature: Double,
 
     @SerialName("time")
     val time: String,
@@ -30,7 +30,7 @@ data class CurrentWeatherDto(
     val weatherCode: Int,
 
     @SerialName("wind_speed_10m")
-    val windSpeed10M: Double,
+    val windSpeed: Double,
 
     @SerialName("is_day")
     val isDay: Int

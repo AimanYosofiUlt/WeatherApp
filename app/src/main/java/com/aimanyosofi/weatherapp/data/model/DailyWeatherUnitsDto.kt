@@ -6,17 +6,14 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class DailyWeatherUnitsDto(
     @SerialName("temperature_2m_max")
-    val temperature2MMax: String,
+    val temperatureMaxUnit: String,
 
     @SerialName("temperature_2m_min")
-    val temperature2MMin: String,
+    val temperatureMinUnit: String,
 
     @SerialName("time")
-    val time: String,
+    val timeUnit: String,
 
     @SerialName("uv_index_max")
-    val uvIndexMax: String,
-
-    @SerialName("weather_code")
-    val weatherCode: String
+    val uvIndexUnit: String,
 )

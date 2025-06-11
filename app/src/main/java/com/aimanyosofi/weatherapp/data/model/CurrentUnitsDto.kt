@@ -6,29 +6,23 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CurrentUnitsDto(
     @SerialName("apparent_temperature")
-    val apparentTemperature: String,
-
-    @SerialName("interval")
-    val interval: String,
+    val apparentTemperatureUnit: String,
 
     @SerialName("rain")
-    val rain: String,
+    val rainUnit: String,
 
     @SerialName("relative_humidity_2m")
-    val relativeHumidity2M: String,
+    val relativeHumidityUnit: String,
 
     @SerialName("surface_pressure")
-    val surfacePressure: String,
+    val surfacePressureUnit: String,
 
     @SerialName("temperature_2m")
-    val temperature2M: String,
+    val temperatureUnit: String,
 
     @SerialName("time")
-    val time: String,
-
-    @SerialName("weather_code")
-    val weatherCode: String,
+    val timeUnit: String,
 
     @SerialName("wind_speed_10m")
-    val windSpeed10M: String
+    val windSpeedUnit: String
 )

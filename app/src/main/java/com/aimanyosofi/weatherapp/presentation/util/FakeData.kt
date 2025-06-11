@@ -1,6 +1,7 @@
 package com.aimanyosofi.weatherapp.presentation.util
 
 import com.aimanyosofi.weatherapp.R
+import com.aimanyosofi.weatherapp.domain.model.WeatherCode
 import com.aimanyosofi.weatherapp.presentation.view_model.state.CurrentForecast
 import com.aimanyosofi.weatherapp.presentation.view_model.state.DayForecast
 import com.aimanyosofi.weatherapp.presentation.view_model.state.WeatherDetail
@@ -10,7 +11,7 @@ import com.aimanyosofi.weatherapp.presentation.view_model.state.WeekForecast
 object FakeData {
     fun getWeatherFakeData(): WeatherUiState {
         val isDay = true
-        val weatherCode = 1
+        val weatherCode = WeatherCode.CLEAR_SKY
         return WeatherUiState(
             locationName = "Baghdad",
             weatherDetails = listOf(
@@ -25,19 +26,19 @@ object FakeData {
                 isDay, weatherCode, 24f, "Partly cloudy", 20f, 32f
             ),
             hourlyForecasts = listOf(
-                DayForecast(isDay, 0, 25.0, "11:00"),
-                DayForecast(isDay, 1, 25.0, "12:00"),
-                DayForecast(isDay, 2, 25.0, "01:00"),
-                DayForecast(isDay, 3, 25.0, "02:00"),
+                DayForecast(isDay, WeatherCode.CLEAR_SKY, 25.0, "11:00"),
+                DayForecast(isDay, WeatherCode.MAINLY_CLEAR, 25.0, "12:00"),
+                DayForecast(isDay, WeatherCode.PARTLY_CLOUDY, 25.0, "01:00"),
+                DayForecast(isDay, WeatherCode.OVERCAST, 25.0, "02:00"),
             ),
             dailyForecasts = listOf(
-                WeekForecast(isDay, 45, "Monday", 20.0, 32.0),
-                WeekForecast(isDay, 48, "Tuesday", 20.0, 32.0),
-                WeekForecast(isDay, 51, "Wednesday", 20.0, 32.0),
-                WeekForecast(isDay, 53, "Thursday", 20.0, 32.0),
-                WeekForecast(isDay, 55, "Friday", 20.0, 32.0),
-                WeekForecast(isDay, 56, "Saturday", 20.0, 32.0),
-                WeekForecast(isDay, 67, "Sunday", 20.0, 32.0),
+                WeekForecast(isDay, WeatherCode.FOG, "Monday", 20.0, 32.0),
+                WeekForecast(isDay, WeatherCode.DEPOSITING_RIME_FOG, "Tuesday", 20.0, 32.0),
+                WeekForecast(isDay, WeatherCode.LIGHT_DRIZZLE, "Wednesday", 20.0, 32.0),
+                WeekForecast(isDay, WeatherCode.MODERATE_DRIZZLE, "Thursday", 20.0, 32.0),
+                WeekForecast(isDay, WeatherCode.DENSE_INTENSITY_DRIZZLE, "Friday", 20.0, 32.0),
+                WeekForecast(isDay, WeatherCode.LIGHT_FREEZING_DRIZZLE, "Saturday", 20.0, 32.0),
+                WeekForecast(isDay, WeatherCode.DENSE_INTENSITY_FREEZING_DRIZZLE, "Sunday", 20.0, 32.0),
             )
         )
     }
