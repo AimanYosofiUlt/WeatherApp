@@ -15,11 +15,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.aimanyosofi.weatherapp.R
 import com.aimanyosofi.weatherapp.presentation.theme.UrbanistFont
 import com.aimanyosofi.weatherapp.presentation.theme.WeatherColors
 import com.aimanyosofi.weatherapp.presentation.view_model.state.WeatherDetail
@@ -68,10 +66,4 @@ fun WeatherDetailCard(
             style = TextStyle(lineHeight = TextUnit.Unspecified, letterSpacing = 0.25.sp)
         )
     }
-}
-
-@Preview
-@Composable
-private fun PreviewInfoCard() {
-    WeatherDetailCard(WeatherDetail(R.drawable.fast_wind, "Wind", "13 KM/h"))
 }

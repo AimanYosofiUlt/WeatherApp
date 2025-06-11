@@ -3,7 +3,7 @@ package com.aimanyosofi.weatherapp.data.repository
 import android.Manifest
 import android.location.Geocoder
 import androidx.annotation.RequiresPermission
-import com.aimanyosofi.weatherapp.domain.models.Location
+import com.aimanyosofi.weatherapp.domain.model.Location
 import com.aimanyosofi.weatherapp.domain.repository.LocationRepository
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.tasks.Tasks
@@ -21,7 +21,7 @@ class LocationRepositoryImpl(
         )
 
         val label = if (!addresses.isNullOrEmpty()) {
-            addresses[0].locality
+            addresses.firstOrNull()?.getAddressLine(0)?.split(", ")?.get(1) ?: "Address not found"
         } else "Unknown"
 
         return Location(

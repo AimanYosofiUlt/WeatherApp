@@ -8,6 +8,8 @@ import androidx.compose.ui.graphics.Color
 val PrimaryColor = Color(0xFF87CEFA)
 val BlackColor = Color(0xFF060414)
 val WhiteColor = Color(0xFFFFFFFF)
+val ShadowColor = Color(0xFF00619D)
+val ShadowColor2 = Color(0xFFC0B7FF)
 
 data class WeatherAppColors(
     val textColor: Color,
@@ -15,6 +17,7 @@ data class WeatherAppColors(
     val backgroundColor: Color,
     val whiteToBlack: Color,
     val primaryToBlack: Color,
+    val shadowColor: Color,
 )
 
 val weatherAppLightColors = WeatherAppColors(
@@ -23,6 +26,7 @@ val weatherAppLightColors = WeatherAppColors(
     backgroundColor = WhiteColor,
     whiteToBlack = WhiteColor,
     primaryToBlack = PrimaryColor,
+    shadowColor = ShadowColor,
 )
 
 val WeatherAppDarkColors = WeatherAppColors(
@@ -31,6 +35,7 @@ val WeatherAppDarkColors = WeatherAppColors(
     backgroundColor = BlackColor,
     whiteToBlack = BlackColor,
     primaryToBlack = BlackColor,
+    shadowColor = ShadowColor2,
 )
 
 val LocalColors = staticCompositionLocalOf<WeatherAppColors> {

@@ -1,4 +1,4 @@
-package com.aimanyosofi.weatherapp.domain.models
+package com.aimanyosofi.weatherapp.data.model
 
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.SerialName
@@ -7,7 +7,7 @@ import kotlinx.serialization.json.JsonNames
 
 @OptIn(ExperimentalSerializationApi::class)
 @Serializable
-data class Location(
+data class LocationDto(
     @SerialName("latitude")
     @JsonNames("lat")
     val latitude: Double,

@@ -1,9 +1,11 @@
 package com.aimanyosofi.weatherapp.data.repository
 
+import com.aimanyosofi.weatherapp.data.mapper.toDomain
+import com.aimanyosofi.weatherapp.data.model.WeatherDto
 import com.aimanyosofi.weatherapp.data.util.retrieve
-import com.aimanyosofi.weatherapp.domain.models.FailedFetchWeatherDataException
-import com.aimanyosofi.weatherapp.domain.models.NoDataRetrievedException
-import com.aimanyosofi.weatherapp.domain.models.Weather
+import com.aimanyosofi.weatherapp.domain.model.FailedFetchWeatherDataException
+import com.aimanyosofi.weatherapp.domain.model.NoDataRetrievedException
+import com.aimanyosofi.weatherapp.domain.model.Weather
 import com.aimanyosofi.weatherapp.domain.repository.WeatherRepository
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
@@ -27,14 +29,14 @@ class WeatherRepositoryImpl(private val httpClient: HttpClient) : WeatherReposit
             )
             parameter(
                 "current",
-                "weather_code,relative_humidity_2m,wind_speed_10m,rain,surface_pressure,apparent_temperature,temperature_2m"
+                "weather_code,relative_humidity_2m,wind_speed_10m,rain,surface_pressure,apparent_temperature,temperature_2m,is_day"
             )
         }
 
         try {
-            return httpClient.retrieve<Weather>(httpResponse) { jsonData ->
+            return retrieve<WeatherDto>(httpResponse) { jsonData ->
                 jsonData.toString()
-            }
+            }.toDomain()
         } catch (e: NoDataRetrievedException) {
             throw FailedFetchWeatherDataException(e.status)
         }

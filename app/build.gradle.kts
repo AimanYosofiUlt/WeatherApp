@@ -67,4 +67,6 @@ dependencies {
 
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.play.services.location)
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
+
 }

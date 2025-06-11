@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -28,13 +27,17 @@ import androidx.compose.ui.unit.sp
 import com.aimanyosofi.weatherapp.R
 import com.aimanyosofi.weatherapp.presentation.theme.UrbanistFont
 import com.aimanyosofi.weatherapp.presentation.theme.WeatherColors
+import com.aimanyosofi.weatherapp.presentation.util.WeatherResourceUtil
 import com.aimanyosofi.weatherapp.presentation.view_model.state.CurrentForecast
 
 @Composable
-fun CurrentWeatherDetails(currentTemperature: CurrentForecast) {
-    Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+fun CurrentWeatherDetails(
+    currentTemperature: CurrentForecast,
+    modifier: Modifier = Modifier,
+) {
+    Column(modifier = Modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
-            modifier = Modifier,
+            modifier = modifier,
             text = "${currentTemperature.temperature}°C",
             fontFamily = UrbanistFont,
             fontSize = 64.sp,
@@ -46,7 +49,7 @@ fun CurrentWeatherDetails(currentTemperature: CurrentForecast) {
 
         Text(
             modifier = Modifier,
-            text = currentTemperature.description,
+            text = WeatherResourceUtil.getName(currentTemperature.weatherCode),
             fontFamily = UrbanistFont,
             fontSize = 16.sp,
             color = WeatherColors.textColor.copy(alpha = 0.6f),

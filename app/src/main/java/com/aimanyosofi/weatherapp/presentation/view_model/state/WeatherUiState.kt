@@ -1,7 +1,6 @@
 package com.aimanyosofi.weatherapp.presentation.view_model.state
 
 import androidx.annotation.DrawableRes
-import com.aimanyosofi.weatherapp.R
 
 data class WeatherUiState(
     val locationName: String = "",
@@ -18,23 +17,25 @@ data class WeatherDetail(
 )
 
 data class CurrentForecast(
-    @DrawableRes val iconRes: Int = R.drawable.forcast_test,
+    val isDay: Boolean = true,
+    val weatherCode: Int = 1,
     val temperature: Float = 0f,
     val description: String = "",
     val lowerTemperature: Float = 0f,
     val higherTemperature: Float = 0f,
-    val isDay:Boolean = true
 )
 
 data class DayForecast(
-    @DrawableRes val iconRes: Int,
-    val temperature: Float,
+    val isDay: Boolean,
+    val weatherCode: Int,
+    val temperature: Double,
     val formattedHour: String,
 )
 
 data class WeekForecast(
-    @DrawableRes val iconRes: Int,
+    val isDay: Boolean,
+    val weatherCode: Int,
     val dayName: String,
-    val lowerTemperature: Float,
-    val higherTemperature: Float,
+    val lowerTemperature: Double,
+    val higherTemperature: Double,
 )
