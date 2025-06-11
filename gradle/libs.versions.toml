@@ -9,7 +9,7 @@ lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 composeBom = "2024.09.00"
 
-koinCore = "4.0.2"
+koinCore = "4.0.3"
 
 lifecycleViewmodelKtx = "2.9.1"
 playServicesLocation = "21.3.0"
