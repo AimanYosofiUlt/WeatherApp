@@ -3,7 +3,7 @@ package com.aimanyosofi.weatherapp.presentation.view_model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aimanyosofi.weatherapp.domain.use_cases.GetLocationUseCase
-import com.aimanyosofi.weatherapp.domain.use_cases.GetWeatherUseCase
+import com.aimanyosofi.weatherapp.domain.use_cases.GetWeatherByLocationUseCase
 import com.aimanyosofi.weatherapp.presentation.mapper.toUiState
 import com.aimanyosofi.weatherapp.presentation.util.FakeData
 import com.aimanyosofi.weatherapp.presentation.view_model.state.WeatherUiState
@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class WeatherViewModel(
     private val getLocationUseCase: GetLocationUseCase,
-    private val getWeatherUseCase: GetWeatherUseCase,
+    private val getWeatherUseCase: GetWeatherByLocationUseCase,
 ) : ViewModel() {
     private val _state = MutableStateFlow(WeatherUiState())
     val state = _state.asStateFlow()
